@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="circle_view_attrs">
+        <attr name="fill_color" format="color" />
+        <attr name="stroke_color" format="color" />
+        <attr name="stroke_width" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="bingo_board_attrs">
+        <attr name="grid_color" format="color" />
+        <attr name="title_color" format="color" />
+        <attr name="number_color" format="color" />
+        <attr name="name_color" format="color" />
+        <attr name="marked_square_color" format="color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.spacenoodles.rxbingo.view.MainActivity">
+
+    <android.support.v4.widget.Space android:id="@+id/top_spacer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/spacer_height" />
+
+    <io.spacenoodles.rxbingo.view.CircleView
+        android:id="@+id/number_circle"
+        android:layout_width="@dimen/bingo_number_circle_diameter"
+        android:layout_height="@dimen/bingo_number_circle_diameter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_spacer"
+        app:stroke_color="@color/colorPrimary"
+        app:fill_color="@android:color/transparent"
+        app:stroke_width="@dimen/bingo_number_circle_stroke_width"/>
+
+    <TextView android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="@dimen/bingo_text_number_size"
+        tools:text="76"
+        app:layout_constraintStart_toStartOf="@id/number_circle"
+        app:layout_constraintEnd_toEndOf="@id/number_circle"
+        app:layout_constraintTop_toTopOf="@id/number_circle"
+        app:layout_constraintBottom_toBottomOf="@id/number_circle"/>
+
+    <Button android:id="@+id/new_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_game"
+        android:textSize="@dimen/button_text_size"
+        android:layout_margin="@dimen/element_spacing_normal"
+        app:layout_constraintTop_toBottomOf="@id/number_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/add_player_button" />
+
+    <Button android:id="@+id/add_player_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_player"
+        android:textSize="@dimen/button_text_size"
+        android:layout_margin="@dimen/element_spacing_normal"
+        app:layout_constraintTop_toBottomOf="@id/number_circle"
+        app:layout_constraintStart_toEndOf="@id/new_game_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.v7.widget.RecyclerView android:id="@+id/bingo_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/element_spacing_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_player_button"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
